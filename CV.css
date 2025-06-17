@@ -1,0 +1,726 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-padding-top: 100px;
+}
+
+body {
+  background: linear-gradient(120deg, #4806e2, #f046ff);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(120deg, #000000, #000000);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 60px;
+  z-index: 1000;
+  font-size: 20px;
+}
+/* hiệu ứng thay đổi màu chữ cho LTL*/
+.navbar .logo {
+  font-weight: bold;
+  font-size: 32px; /* Tăng kích thước chữ */
+  background: linear-gradient(90deg, #ff0303, #3333ff, #44ff00);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: logoGradientMove 5s linear infinite;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.section {
+  height: 100vh;
+  padding: 100px 40px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/*======section hero====== */
+
+#hero {
+  
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#hero-effects {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+/* Container bố cục trái-phải */
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 40px;
+}
+/* Văn bản bên trái */
+.hero-text {
+  flex: 1;
+  max-width: 50%;
+  transform: rotate(-45deg);
+  transform-origin: left center; /* Xoay quanh góc trái giữa */
+
+}
+
+.hero-text .intro {
+  transform: rotate(-5deg);
+  display: inline-block;
+  font-style: italic;
+  color: #ffffff;
+  
+  font-size: 26px;         /* Tăng cỡ chữ */
+  margin-bottom: 10px;
+
+}
+
+.hero-text .hero-title {
+  transform: rotate(-5deg);
+  display: inline-block;
+  font-style: italic;
+  color: #ffffff;
+  font-size: 64px;         /* Tăng đáng kể tiêu đề */
+  font-weight: bold;
+  margin: 20px 0;
+  line-height: 1.3;
+
+}
+
+.hero-text .location {
+  transform: rotate(-5deg);
+  display: inline-block;
+  font-style: italic;
+  color: #ffffff;
+  font-size: 22px;         /* Tăng size địa điểm */
+  margin-bottom: 20px;
+
+}
+
+.hero-text .btn {
+    
+  font-size: 20px;         /* Nút lớn hơn */
+  padding: 12px 28px;
+
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-img {
+  width: 400px;
+  border-radius: 50%;
+  animation: avatarWobble 6s ease-in-out infinite alternate;
+}
+
+
+
+.hero-image {
+  animation: slideInRight 1s ease-out forwards;
+}
+
+/* Text size adjustments */
+.intro, .location {
+  font-size: 1rem;
+  color: #333;
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin: 10px 0;
+  font-weight: bold;
+}
+.reveal {
+  opacity: 0;
+  transform: translateX(-100px) rotate(-45deg);  /* Kết hợp xoay và trượt */
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateX(0) rotate(-45deg); /* Duy trì góc nghiêng, chỉ trượt */
+}
+
+
+
+/*====== section about======*/
+/* Tổng thể phần about */
+.about {
+  
+  padding: 100px 100px;
+  
+}
+
+/* Tiêu đề "about." */
+.about h2 {
+  font-size: 60px;
+  font-weight: 900;
+  color: #fff;
+
+  margin-bottom: 20px;
+
+}
+
+/* Đoạn mô tả giới thiệu */
+.about .intro {
+  font-size: 16px;
+  color: #ffffff;
+  line-height: 1.6;
+  max-width: 700px;
+  margin-bottom: 40px;
+}
+
+/* Timeline */
+.timeline .event {
+  position: relative;
+  padding-left: 30px;
+  margin-left: 150px; 
+  margin-bottom: 30px;
+}
+
+/* Dấu chấm trước tiêu đề */
+.timeline .event h3::before {
+  content: '●';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 1;
+}
+
+/* Tiêu đề thời gian */
+.timeline .event h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+/* Mô tả mỗi mốc thời gian */
+.timeline .event p {
+  font-size: 16px;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Delay xuất hiện */
+.reveal-delay-0 { transition-delay: 0s; }
+.reveal-delay-1 { transition-delay: 0.3s; }
+.reveal-delay-2 { transition-delay: 0.6s; }
+.reveal-delay-3 { transition-delay: 0.9s; }
+.reveal-delay-4 { transition-delay: 1.2s; }
+
+
+/*====== section Career =======*/
+
+
+.career {
+  padding: 150px 200px;
+}
+
+
+.career h2{
+  font-size: 60px;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.career-container {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.career-column {
+    flex: 1;
+    min-width: 280px;
+    background-color: #6d6dd6;
+
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.career-column h3 {
+    color: #FF6600;
+    margin-bottom: 10px;
+    font-size: 26px;
+}
+
+.career-column ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.career-column li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+    color: #fff;
+}
+
+/*animation section career*/
+
+/* Reveal chung */
+.reveal {
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+/* Khi được active */
+.reveal.active {
+  opacity: 1;
+  transform: none;
+}
+
+/* Hiệu ứng slide từ trên xuống cho h2 */
+.reveal-delay-0 {
+  transform: translateY(-40px);
+}
+
+/* Cột trái trượt từ trái vào */
+.reveal-delay-1 {
+  transform: translateX(-100px);
+  transition-delay: 0.2s;
+}
+
+/* Cột phải trượt từ phải vào */
+.reveal-delay-2 {
+  transform: translateX(100px);
+  transition-delay: 0.4s;
+}
+
+/*===== section hobby======*/
+.hobbies {
+  padding: 150px 200px;
+}
+
+#hobbies h2 {
+  font-size: 60px;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+
+.hobby-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.hobby-column {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+}
+
+.hobby-item {
+  color: #ffffff;
+  background-color: #6d6dd6;
+  padding: 20px;
+  border-left: 6px solid #FF6600;
+  border-radius: 12px;
+  position: relative;
+  transition: all 0.1s ease-in-out;
+}
+
+.hobby-item:hover {
+  background-color: #000000;
+  transform: translateY(-5px);
+}
+
+.hobby-item .icon {
+  font-size: 28px;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+.hobby-item h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  color: #FF6600;
+}
+
+.hobby-item p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+/*animation hobbies*/
+/* Hiệu ứng xuất hiện khi cuộn xuống */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Delay theo thứ tự */
+.reveal-delay-0 { transition-delay: 0s; }
+.reveal-delay-1 { transition-delay: 0.2s; }
+.reveal-delay-2 { transition-delay: 0.4s; }
+.reveal-delay-3 { transition-delay: 0.6s; }
+.reveal-delay-4 { transition-delay: 0.8s; }
+.reveal-delay-5 { transition-delay: 1s; }
+
+/* =======Section Skills======== */
+
+.skills {
+  padding: 150px 200px;
+  color: #fff;
+}
+
+#skills h2 {
+  font-size: 60px;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 40px;
+  text-align: center;
+
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+
+#skills.reveal h2 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skill {
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 1s ease;
+}
+
+#skills.reveal .skill {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.skill span {
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.progress-bar {
+  background-color: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 20px;
+}
+
+.progress {
+  height: 100%;
+  width: 0%;
+  border-radius: 10px;
+  transition: width 2s ease-in-out, background-position 2s ease-in-out;
+
+  background: linear-gradient(90deg, red, yellow, limegreen);
+  background-size: 200% 100%;
+  background-position: left;
+}
+
+.progress.active {
+  background-position: right;
+}
+
+/* =======sections chứng chỉ========*/
+/* ==== PHẦN CHỨNG CHỈ ==== */
+.certificates {
+  padding: 150px 50px;
+  background: linear-gradient(to bottom, #9b30ff, #7b1fa2); /* Tùy chỉnh nền */
+  text-align: center;
+}
+
+#certificates h2 {
+  font-size: 60px;
+  font-weight: 900;
+  color: #FF6600;
+  margin-bottom: 20px;
+}
+
+#certificates p {
+  font-size: 24px;
+  color: #FF6600;
+  margin-bottom: 40px;
+}
+
+.cert-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.cert-item {
+  width: 300px;
+  height: 200px;
+  border-radius: 20px;
+  overflow: hidden; /* QUAN TRỌNG: giúp bo ảnh và overlay */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.cert-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+/* Hover: phóng ảnh */
+.cert-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Hover overlay text */
+.cert-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  padding: 10px;
+  text-align: center;
+}
+
+.cert-item:hover .cert-overlay {
+  opacity: 1;
+}
+
+/* Responsive cho màn nhỏ */
+@media (max-width: 768px) {
+  .cert-item {
+    width: 90%;
+    height: auto;
+  }
+
+  .cert-item img {
+    height: auto;
+  }
+
+  #certificates h2 {
+    font-size: 40px;
+  }
+
+  #certificates p {
+    font-size: 18px;
+  }
+}
+
+
+
+
+
+@keyframes sway {
+  0% { transform: rotate(-3deg); }
+  100% { transform: rotate(3deg); }
+}
+
+@keyframes hero-snow-move {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(50vh);
+  }
+}
+
+.btn {
+  background: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.timeline .event {
+  margin-bottom: 20px;
+}
+
+.projects {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.project {
+  width: 45%;
+  background: #fff;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.project img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+footer {
+  background: #f1c40f;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .projects {
+    flex-direction: column;
+  }
+  .project {
+    width: 100%;
+  }
+  .navbar ul {
+    flex-direction: column;
+  }
+}
+
+/* Animation chung */
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/* Lắc lư nhẹ cho ảnh đại diện */
+@keyframes avatarWobble {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(6deg);
+  }
+  100% {
+    transform: rotate(-6deg);
+  }
+}
+
+/* anomation cho tiêu đề LTL */
+@keyframes logoGradientMove {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/*animation hobbies*/
+.hobby-item:hover .icon {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* Tạo hiệu ứng rung */
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+  75% { transform: rotate(-3deg); }
+  100% { transform: rotate(0deg); }
+}
+
