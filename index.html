@@ -4,36 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Cá Nhân - Lý Tiểu Long</title>
+    <title>PORITFOLIO CV</title>
     <link rel="stylesheet" href="CV.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-
+    <!-- Font Awesome đã có trong <head> -->
     <header class="navbar">
         <a href="#hero" class="logo">Lý Tiểu Long</a>
 
-        <nav>
-            <ul>
-                <li><a href="#about">Giới Thiệu</a></li>
-                <li><a href="#career">Mục Tiêu</a></li>
-                <li><a href="#hobbies">Sở Thích</a></li>
-                <li><a href="#skills">Kỹ Năng</a></li>
-                <li><a href="#certificates">Chứng Chỉ</a></li>
-                <li><a href="#projects">Dự Án</a></li>
-                <li><a href="#contact">Liên Hệ</a></li>
-            </ul>
-        </nav>
+        <!-- Nút menu mobile -->
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <!-- Danh sách menu -->
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#about">Giới Thiệu</a></li>
+            <li><a href="#career">Mục Tiêu</a></li>
+            <li><a href="#hobbies">Sở Thích</a></li>
+            <li><a href="#skills">Kỹ Năng</a></li>
+            <li><a href="#certificates">Chứng Chỉ</a></li>
+            <li><a href="#projects">Dự Án</a></li>
+            <li><a href="#contact">Liên Hệ</a></li>
+
+            <!-- Nút đóng menu -->
+            <li class="close-menu" id="close-menu"><i class="fas fa-times"></i></li>
+        </ul>
     </header>
 
 
+    <!--Trang chủ-->
     <section id="hero" class="section">
         <div id="hero-effects"></div>
         <div class="hero-container">
             <div class="hero-text reveal reveal-delay-0">
-                <p class="intro">Hi!! I’m Lý Tiểu Long</p>
-                <h1 class="hero-title">Cyber Security<br>Programmer</h1>
-                <p class="location">University Of Transport Ho Chi Minh City</p> <br> <br>
+                <p class="intro" id="intro-text">Hi!! I’m Lý Tiểu Long</p>
+                <h1 class="hero-title" id="hero-title">Cyber Security<br>Programmer</h1>
+                <p class="location" id="location-text">University Of Transport Ho Chi Minh City</p> <br> <br>
                 <a href="#contact" class="btn">Liên hệ</a>
             </div>
             <div class="hero-image">
@@ -41,10 +51,10 @@
             </div>
         </div>
     </section>
-    <hr>
 
+    <!--giới thiệu-->
     <section id="about" class="about">
-        <h2 class="reveal reveal-delay-0">Giới Thiệu</h2>
+        <h2 class="reveal reveal-delay-0">Giới Thiệu Về Bản Thân</h2>
         <p class="intro reveal reveal-delay-1">
             halô!! Mik là <strong>Lý Tiểu Long</strong> hiện đang là sinh viên của Trường ĐH Giao Thông Vận Tải TP
             HCM(UTH)
@@ -74,10 +84,10 @@
             </div>
         </div>
     </section>
-    <hr>
 
+    <!--Mục tiêu-->
     <section id="career" class="career">
-        <h2 class="reveal reveal-delay-0">Mục Tiêu</h2>
+        <h2 class="reveal reveal-delay-0">Đặt Mục Tiêu Để Hoàn Thành</h2>
         <div class="career-container">
             <div class="career-column left reveal reveal-delay-1">
                 <h3>Khi còn trên ghế nhà trường</h3>
@@ -101,10 +111,9 @@
         </div>
     </section>
 
-    <hr>
-
+    <!--Sở Thích-->
     <section id="hobbies" class="hobbies">
-        <h2 class="reveal reveal-delay-0">Sở Thích</h2>
+        <h2 class="reveal reveal-delay-0">Sở Thích Cá Nhân</h2>
         <div class="hobby-grid">
 
             <div class="hobby-column">
@@ -117,7 +126,8 @@
                 <div class="hobby-item reveal reveal-delay-1">
                     <span class="icon">🍔</span>
                     <h3>Ăn Uống</h3>
-                    <p>Khám phá ẩm thực đường phố và các món ăn vặt tại TP.HCM, đặc biệt yêu thích hamburger và trà sữa.
+                    <p>Khám phá ẩm thực đường phố và các món ăn vặt tại TP.HCM, đặc biệt yêu thích bún đậu mắm tôm và
+                        bánh mì chả cá.
                     </p>
                 </div>
                 <div class="hobby-item reveal reveal-delay-2">
@@ -133,7 +143,7 @@
                 <div class="hobby-item reveal reveal-delay-3">
                     <span class="icon">🎮</span>
                     <h3>Chơi Game</h3>
-                    <p>Giải trí qua các trò chơi điện tử như Liên Quân, Genshin Impact; vừa chơi vừa học được tư duy
+                    <p>Giải trí qua các trò chơi điện tử như valorant, Genshin Impact; vừa chơi vừa học được tư duy
                         chiến thuật.</p>
                 </div>
                 <div class="hobby-item reveal reveal-delay-4">
@@ -145,115 +155,149 @@
                 <div class="hobby-item reveal reveal-delay-5">
                     <span class="icon">📚</span>
                     <h3>Học Tập</h3>
-                    <p>Hiện đang học tại ĐH GTVT TP.HCM chuyên ngành CNTT, thường học qua nền tảng như Udemy, YouTube,
-                        freeCodeCamp.</p>
+                    <p>Hiện đang học tại ĐH GTVT TP.HCM chuyên ngành CNTT, thường học qua nền tảng như I8, YouTube,
+                        Xuanthulab.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <hr>
 
+    <!--Ngôn ngữ & kỹ năng-->
     <section id="skills" class="skills reveal">
-  <h2>Ngôn Ngữ & Kỹ năng</h2>
+        <h2>Ngôn Ngữ & Kỹ năng</h2>
 
-  <div class="skill">
-    <span>HTML, CSS, JavaScript</span>
-    <div class="progress-bar">
-      <div class="progress" data-width="65%"></div>
-    </div>
-  </div>
+        <div class="skill">
+            <span>HTML, CSS, JavaScript</span>
+            <div class="progress-bar">
+                <div class="progress" data-width="65%"></div>
+            </div>
+        </div>
 
-  <div class="skill">
-    <span>C++, C#, My SQL</span>
-    <div class="progress-bar">
-      <div class="progress" data-width="80%"></div>
-    </div>
-  </div>
+        <div class="skill">
+            <span>C++, C#, My SQL</span>
+            <div class="progress-bar">
+                <div class="progress" data-width="80%"></div>
+            </div>
+        </div>
 
-  <div class="skill">
-    <span>Kali linux</span>
-    <div class="progress-bar">
-      <div class="progress" data-width="50%"></div>
-    </div>
-  </div>
+        <div class="skill">
+            <span>Giải quyết các vấn đề </span>
+            <div class="progress-bar">
+                <div class="progress" data-width="70%"></div>
+            </div>
+        </div>
 
-  <div class="skill">
-    <span>Tiếng anh</span>
-    <div class="progress-bar">
-      <div class="progress" data-width="60%"></div>
-    </div>
-  </div>
+        <div class="skill">
+            <span>Tự học tập trao dồi bản thân</span>
+            <div class="progress-bar">
+                <div class="progress" data-width="75%"></div>
+            </div>
+        </div>
 
-  <div class="skill">
-    <span>Làm việc nhóm và giao tiếp</span>
-    <div class="progress-bar">
-      <div class="progress" data-width="90%"></div>
-    </div>
-  </div>
-</section>
+        <div class="skill">
+            <span>Làm việc nhóm & giao tiếp</span>
+            <div class="progress-bar">
+                <div class="progress" data-width="90%"></div>
+            </div>
+        </div>
+    </section>
 
-
-    <hr>
-
+    <!-- Chứng chỉ -->
     <section id="certificates" class="certificates reveal">
-  <h2>Chứng chỉ</h2>
-  <p>Đây là 1 số thành tích mà mik đã đạt được hẹ hẹ hẹ</p>
-  <div class="cert-container">
-    <!-- Bên trái: Cấp 2 -->
-    <div class="cert-item">
-      <div class="cert-image">
-        <img src="/image/cc1.png" alt="Chứng chỉ tốt nghiệp cấp 2">
-        <div class="cert-overlay">
-          <p>Chứng chỉ tốt nghiệp cấp 2</p>
+        <h2>Chứng chỉ</h2>
+        <p>Đây là 1 số thành tích mà mik đã đạt được hẹ hẹ hẹ</p>
+        <div class="cert-container">
+
+            <div class="cert-item">
+                <div class="cert-image">
+                    <img src="/image/cc1.png" alt="Chứng chỉ tốt nghiệp cấp 2">
+                    <div class="cert-overlay">
+                        <p>hình ảnh chỉ mang tính chất meme</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-image">
+                    <img src="/image/cc1.png" alt="Chứng chỉ tốt nghiệp cấp 3">
+                    <div class="cert-overlay">
+                        <p>hình ảnh chỉ mang tính chất meme</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Bên phải: Cấp 3 -->
-    <div class="cert-item">
-      <div class="cert-image">
-        <img src="/image/cc1.png" alt="Chứng chỉ tốt nghiệp cấp 3">
-        <div class="cert-overlay">
-          <p>Chứng chỉ tốt nghiệp cấp 3</p>
-        </div>
-      </div>
-    </div>
-  </div>
+    </section>
 
-</section>
 
-    <hr>
-
-    <section id="projects" class="section">
-        <h2>Projects</h2>
+    <!-- Dự án -->
+    <section id="projects" class="section projects-section reveal">
+        <h2>Dự Án</h2>
+        <p class="project-desc">Dưới đây là một số sản phẩm mình đã thực hiện trong quá trình học tập và thực hành.</p>
+        <br>
         <div class="projects">
             <div class="project">
-                <img src="project1.jpg" alt="Project 1">
-                <h3>Website bán sách</h3>
-                <p>Thiết kế giao diện và chức năng giỏ hàng bằng JavaScript</p>
+                <div class="project-image">
+                    <img src="/image/DA1.png" alt="Project 1">
+                    <div class="project-overlay">
+                        <p>Xem chi tiết</p>
+                    </div>
+                </div>
+                <h3>Website bán hoa</h3>
+                <p>Đây là một trang web mình được làm đầu tiên khi bắt đầu học tập và thực hành môn học
+                    công nghệ phần mềm với ngôn ngữ cho dự án HTML, CSS, C#, MySQL.
+                </p>
             </div>
+
             <div class="project">
-                <img src="project2.jpg" alt="Project 2">
-                <h3>Landing Page khóa học</h3>
-                <p>Sử dụng HTML/CSS cùng hiệu ứng scroll JS</p>
+                <div class="project-image">
+                    <img src="/image/DA2.png" alt="Project 2">
+                    <div class="project-overlay">
+                        <p>Xem chi tiết</p>
+                    </div>
+                </div>
+                <h3>Portfolio CV</h3>
+                <p>Trang web với CV của chính mình đây cũng là demo cho môn học Lập trình web với ngôn ngữ CSS, HTML, JS
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- Modal hiển thị ảnh phóng to -->
+    <div id="project-modal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modal-image" alt="">
+    </div>
+    <!-- Liên hệ-->
+    <section id="contact" class="section reveal">
+        <h2 class="reveal reveal-delay-0">Liên Hệ</h2>
+        <h4 class="reveal reveal-delay-0">
+            Nếu bạn muốn quan tâm hay biết thêm chi tiết về mình có thể liên hệ mình thông qua các đường dẫn phía dưới.
+        </h4>
+        <div class="contact-container reveal reveal-delay-1">
+            <div class="contact-list">
+                <a href="mailto:ltlong2020st@gmail.com" class="contact-item reveal reveal-delay-2" target="_blank">
+                    <i class="fas fa-envelope"></i> ltlong2020st@gmail.com
+                </a>
+                <a href="https://www.facebook.com/..." class="contact-item reveal reveal-delay-3" target="_blank">
+                    <i class="fab fa-facebook"></i> facebook
+                </a>
+                <a href="https://github.com/..." class="contact-item reveal reveal-delay-4" target="_blank">
+                    <i class="fab fa-github"></i> github
+                </a>
+                <div class="contact-item reveal reveal-delay-5">
+                    <i class="fas fa-phone"></i> 077 659 5109
+                </div>
+                <div class="contact-item reveal reveal-delay-6">
+                    <i class="fas fa-map-marker-alt"></i> 20/11, Trung Chánh 2, Hóc Môn, Hồ Chí Minh
+                </div>
             </div>
         </div>
     </section>
 
-    <hr>
-
-    <section id="contact" class="section">
-        <h2>Contact</h2>
-        <p>Email: ly.tieulong@example.com</p>
-        <p>Facebook: fb.com/lytieulong</p>
-        <p>Github: github.com/lytieulong</p>
-    </section>
-
-    <hr>
-
     <footer>
-        <p>&copy; 2025 Lý Tiểu Long. All rights reserved.</p>
+        <p class="scroll-text">&copy; 2025 Lý Tiểu Long. Mỗi dòng code là một bước tiến - Hành trình không ngừng học
+            hỏi.</p>
     </footer>
 
     <script src="CV.js"></script>

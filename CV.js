@@ -1,4 +1,4 @@
-// 1. Highlight menu khi scroll
+//Highlight menu khi scroll
 window.addEventListener("scroll", () => {
   const sections = document.querySelectorAll(".section");
   const navLinks = document.querySelectorAll(".navbar a");
@@ -20,7 +20,7 @@ window.addEventListener("scroll", () => {
   });
 });
 
-// 2. Hiệu ứng random nền hero
+//Hiệu ứng tuyết rơi random nền của hero
 const container = document.getElementById('hero-effects');
 if (container) {
   const bordersArray = ['50%', '0px'];
@@ -58,7 +58,7 @@ if (container) {
   createElementRandom();
 }
 
-// 3. Reveal hiệu ứng cho các phần tử có class .reveal + animate kỹ năng
+//Reveal hiệu ứng cho các phần tử có class .reveal + animate kỹ năng
 let skillsAnimated = false;
 
 function revealOnScroll() {
@@ -83,7 +83,7 @@ function revealOnScroll() {
   });
 }
 
-// 4. Animate kỹ năng
+//Animate kỹ năng
 function animateSkills() {
   const skillItems = document.querySelectorAll("#skills .skill");
   skillsAnimated = true;
@@ -102,3 +102,63 @@ function animateSkills() {
 // Gọi hiệu ứng khi load và scroll
 window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", revealOnScroll);
+
+// Modal ảnh phóng to
+const modal = document.getElementById("project-modal");
+const modalImg = document.getElementById("modal-image");
+const closeBtn = document.querySelector(".modal-close");
+
+
+
+// Gán sự kiện click cho từng ảnh dự án
+document.querySelectorAll(".project img").forEach(img => {
+  img.addEventListener("click", () => {
+    modal.style.display = "flex";
+    modalImg.src = img.src;
+    
+  });
+});
+
+// Đóng modal khi click nút X
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+// Đóng modal khi click bên ngoài ảnh
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+});
+
+// Thêm delay động cho từng project
+function applyRevealDelay(selector, baseDelay = 0.4, step = 0.3) {
+  const items = document.querySelectorAll(selector);
+  items.forEach((item, index) => {
+    item.style.transitionDelay = `${baseDelay + index * step}s`;
+  });
+}
+
+applyRevealDelay('#projects .project');
+applyRevealDelay('#certificates .cert-item');
+
+const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+  const closeMenu = document.getElementById('close-menu');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.add('active');
+  });
+
+  closeMenu.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+  });
+
+  // Đóng menu khi bấm vào bất kỳ liên kết nào
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+    });
+  });
+
+  
