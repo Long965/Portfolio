@@ -154,11 +154,5 @@ const menuToggle = document.getElementById('menu-toggle');
     navLinks.classList.remove('active');
   });
 
-  // Đóng menu khi bấm vào bất kỳ liên kết nào
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('active');
-    });
-  });
 
   
