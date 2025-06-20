@@ -141,7 +141,3 @@ function applyRevealDelay(selector, baseDelay = 0.4, step = 0.3) {
 
 applyRevealDelay('#projects .project');
 applyRevealDelay('#certificates .cert-item');
-
-
-
-  

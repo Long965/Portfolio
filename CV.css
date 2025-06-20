@@ -614,7 +614,7 @@ body {
 .project:hover img {
   transform: scale(1.05);
 }
-/* Overlay hiển thị nội dung */
+/* Overlay hiển thị nội dung  */
 .project-content {
   position: absolute;
   top: 0;
