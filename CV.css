@@ -20,7 +20,7 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background: linear-gradient(120deg, #000000, #000000);
+  background: linear-gradient(120deg, #2c2178);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -142,7 +142,7 @@ body {
 }
 
 .hero-img {
-  width: 400px;
+  width: 350px;
   border-radius: 50%;
   animation: avatarWobble 6s ease-in-out infinite alternate;
 }
@@ -900,7 +900,7 @@ footer {
   left: 0;
   width: 100%;
   height: 40px;
-  background: #000000;
+  background: #2c2178;
   overflow: hidden;
   display: flex;
   align-items: center;
